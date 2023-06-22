@@ -1,0 +1,15 @@
+.products-page {
+  max-width: 70vw;
+  margin: 0 auto;
+  margin-top: 60px;
+
+  .products {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 64px;
+    flex-wrap: wrap;
+  }
+}

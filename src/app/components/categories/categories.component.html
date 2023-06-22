@@ -1,0 +1,21 @@
+<div class="categories">
+  <div 
+    class="categories__item"
+    (click)="onCategoryClick('')"
+    [ngClass]="{
+      'active' : currentCategory === ''
+    }"
+  >
+    all
+  </div>
+  <div 
+    class="categories__item"
+    *ngFor="let category of categories$ | async"
+    [ngClass]="{
+      'active' : currentCategory === category
+    }"
+    (click)="onCategoryClick(category)"
+  >
+    {{ category }}
+  </div>
+</div>

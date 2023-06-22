@@ -1,0 +1,11 @@
+<div class="products-page">
+  <app-categories 
+    (onCategoryChange)="onCategoryChange($event)"
+  />
+  <div class="products">
+    <app-product 
+      *ngFor="let product of products$ | async"
+      [product]="product"
+    />
+  </div>
+</div>
