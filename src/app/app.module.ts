@@ -8,6 +8,11 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
 import { CategoriesComponent } from './components/categories/categories.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppProductComponent } from './components/app-product/app-product.component';
+import { MoreItemsComponent } from './components/more-items/more-items.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +21,17 @@ import { AppProductComponent } from './components/app-product/app-product.compon
     ProductsPageComponent,
     ProductPageComponent,
     CategoriesComponent,
-    AppProductComponent
+    AppProductComponent,
+    MoreItemsComponent,
+    LoaderComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ToastrModule.forRoot(), 
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

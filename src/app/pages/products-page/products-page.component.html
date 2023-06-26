@@ -3,6 +3,7 @@
     (onCategoryChange)="onCategoryChange($event)"
   />
   <div class="products">
+    <app-loader *ngIf="productService.isLoading$ | async" />
     <app-product 
       *ngFor="let product of products$ | async"
       [product]="product"

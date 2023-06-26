@@ -1,1 +1,33 @@
-<p>product-page works!</p>
+<div class="product-page">
+  <app-loader *ngIf="productService.isLoading$ | async" />
+  <div
+    *ngIf="!(productService.isLoading$ | async)" 
+    class="product-page__product"
+  >
+    <img [src]="product.image" alt="#">
+    <div class="product-page__product--info">
+      <h1>{{ product.title }}</h1>
+      <p>{{ product.description }}</p>
+      <div class="product-page__product--summary">
+        <button (click)="onAddToCart()">
+          Добавить в корзину: {{ product.price * currentCount }} $
+        </button>
+        <div class="product-page__product--summary__count">
+          <button
+            [disabled]="currentCount === 1" 
+            (click)="onCountDecrease()"
+          >
+            -
+          </button>
+          <p>{{ currentCount }}</p>
+          <button (click)="onCountIncrease()">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-more-items
+    [productId]="product.id" 
+    [category]="product.category"
+  />
+</div>
+

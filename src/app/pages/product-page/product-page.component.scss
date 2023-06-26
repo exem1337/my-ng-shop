@@ -1,0 +1,51 @@
+.product-page {
+  max-width: 75vw;
+  margin: 0 auto;
+  margin-top: 60px;
+
+  &__product {
+    display: flex;
+
+    img {
+      width: 550px;
+      height: 550px;
+      margin-right: 24px;
+    }
+
+    &--summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+
+      &__count {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        p {
+          margin: 0;
+        }
+      }
+
+      button {
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: .3s ease;
+
+        &:disabled {
+          background-color: lighten(blue, 20%);
+          pointer-events: none;
+        }
+
+        &:hover {
+          background-color: lighten(blue, 15%);
+        }
+      }
+    }
+  }
+}

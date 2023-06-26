@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { ProductsService } from 'src/app/services/products.service.service';
 import { IProduct } from 'src/models/product.model';
@@ -11,7 +11,7 @@ import { IProduct } from 'src/models/product.model';
 export class ProductsPageComponent implements OnInit {
   products$: Observable<Array<IProduct>>;
   
-  constructor(private productService: ProductsService) {}
+  constructor(public productService: ProductsService) {}
 
   onCategoryChange(category: string) {
     console.log('change')

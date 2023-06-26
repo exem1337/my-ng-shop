@@ -1,0 +1,11 @@
+<h4 *ngIf="items">Другие товары из данной категории</h4>
+<div class="more-items">
+  <div
+    *ngFor="let product of items" 
+    class="more-items__item"
+    (click)="onProductClick(product.id)"
+  >
+    <img [src]="product.image" alt="#">
+    <p>{{ product.title }}</p>
+  </div>
+</div>

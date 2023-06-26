@@ -1,7 +1,15 @@
 <div 
-  clas="product"
+  clas="product-item"
   (click)="onProductClick()"
 >
-  <img class="product__img" [src]="product.image" alt="">
-  sas
+  <div class="product-item__inner">
+    <img class="product-item__inner--img" [src]="product.image" alt="">
+    <div class="product-item__inner--content">
+      <p class="product-item__inner--content__title">{{ product.title }}</p>
+      <div class="product-item__inner--content__info">
+        <p>Рейтинг: {{ product.rating.rate }}</p>
+        <p>Цена: {{ product.price }} $</p>
+      </div>
+    </div>
+  </div>
 </div>

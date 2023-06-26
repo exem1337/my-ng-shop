@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  constructor(
+    public cartService: CartService,
+    private router: Router,
+  ) {}
 
+  onGoToCart() {
+    this.router.navigate(['cart'])
+  }
+
+  onGoToMain() {
+    this.router.navigate([''])
+  }
 }

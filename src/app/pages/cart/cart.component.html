@@ -1,0 +1,42 @@
+<div class="cart">
+  <h4 
+    class="cart--empty"
+    *ngIf="cartService.cart.length === 0"
+  >
+    Корзина пуста
+  </h4>
+
+  <div class="cart__items">
+    <div
+      *ngFor="let item of cartService.cart" 
+      class="cart__items--item"
+    >
+      <img 
+        [src]="item.image" alt=""
+        (click)="onGoToProduct(item.id)"
+      >
+      <div class="cart__items--item__inner">
+        <div>
+          <h4>{{ item.title }}</h4>
+          <div class="cart__items--item__inner--info">
+            <p>Количество: {{ item.count }}</p>
+            <p>Цена: {{ item.price * item.count }} $</p>    
+          </div>
+        </div>
+        <div class="cart__items--item__inner--actions">
+          <button
+            class="cart__items--item__inner--remove"
+            (click)="onDeleteProduct(item.id)"
+          >
+            +
+          </button>
+          <div class="cart__items--item__inner--count">
+            <button (click)="onDecreaseCount(item.id)">-</button>
+            <p>{{ item.count }}</p>
+            <button (click)="onIncreaseCount(item.id)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

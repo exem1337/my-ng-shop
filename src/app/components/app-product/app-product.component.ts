@@ -11,7 +11,7 @@ export class AppProductComponent {
   @Input() product: IProduct;
 
   constructor(private router: Router) {}
-
+  
   onProductClick() {
     this.router.navigate([`products/${this.product.id}`])
   }

@@ -1,5 +1,5 @@
 <div class="header">
-  Магазинчик
+ <span (click)="onGoToMain()">Магазинчик</span>
 
-  <button>Корзина</button>
+  <button (click)="onGoToCart()">Корзина {{ cartService.cartSum }} $</button>
 </div>

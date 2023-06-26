@@ -1,9 +1,32 @@
-.product {
-  cursor: pointer;
+.product-item {
+  &__inner {
+    cursor: pointer;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
-  &__img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
+    &--img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    &--content {
+      &__title {
+        text-align: center;
+      }
+
+      &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
   }
 }
