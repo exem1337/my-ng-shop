@@ -13,6 +13,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CartComponent } from './pages/cart/cart.component';
+import { HighlightDirective } from './directives/app-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CartComponent } from './pages/cart/cart.component';
     AppProductComponent,
     MoreItemsComponent,
     LoaderComponent,
-    CartComponent
+    CartComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
