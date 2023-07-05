@@ -9,9 +9,7 @@ import { Observable, of, tap } from 'rxjs';
 export class ProductsService {
   public isLoading$: Observable<boolean>;
 
-  constructor(private http: HttpClient) {
-    
-  }
+  constructor(private http: HttpClient) {}
 
   getCategories() {
     this.isLoading$ = of(true);
